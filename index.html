@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data Collection Project</title>
+
+    <!-- CSS START -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+    <!-- CSS END -->
+
+</head>
+<body>
+
+<div class="container">
+    <h2>User Registration Form</h2>
+    <h3>by collect Manish Yadav</h3>
+
+    <form id="myForm">
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="email" id="email">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <button type="submit" id = "m1">Submit</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<!-- JAVASCRIPT START -->
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // page reload rokta hai
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        // Validation
+        if (name === "" || email === "" || password === "") {
+            alert("All fields are required!");
+            return;
+        }
+
+        // Display data
+        document.getElementById("result").innerHTML = 
+            "Submitted Data but no collected <br><br>" +
+            "Name: " + name + "<br>" +
+            "Email: " + email;
+            document.getElementById("m1").innerHTML="Thank You";
+    });
+</script>
+<!-- JAVASCRIPT END -->
+
+</body>
+</html>
